@@ -28,6 +28,19 @@ def wynikPochodnej2(x):
 
 print(drugaPochodna(x))
 
+def wyborWartosci(a, b):
+  wartosc = 0
+  if (funkcja(b)*wynikPochodnej2(b) > 0):
+    wartosc = b
+    print("f(0)*f''(0) > 0 dla: x = ", wartosc)
+    return wartosc
+  if (funkcja(a)*wynikPochodnej2(a) > 0):
+    wartosc = a
+    print("f(-1)*f''(-1) > 0 dla: x = ", wartosc)
+    return wartosc
+  else:
+    print("zadna z tych liczb")
+
 print("")
 print("Wartosc funkcji dla x=2 wynosi: ", funkcja(2))
 print("Pochodna dla x=2 wynosi: ", wynikPochodnej1(2))
@@ -46,7 +59,11 @@ print("Pochodna dla x=0 wynosi: ", wynikPochodnej1(0))
 print("Druga pochodna dla x=0 wynosi: ", wynikPochodnej2(0))
 
 print("Wybieramy przedział [-1,0], w ktorym szukamy rozwiazania. Funkcja i druga pochodna maja ten sam znak, wiec spelniaja zalozenia ")
-x0 = 0
+print("szukamy liczby: ",)
+
+# print(wyborWartosci(-1, 0))
+x0 = wyborWartosci(-1, 0)
+
 print("xo wynosi: ", x0)
 x1 = x0 - (funkcja(0)/wynikPochodnej1(0))
 print("x1 wynosi: ", x1)
